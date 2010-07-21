@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<enumeration>
+    <option description="A generic relation type, more concrete link should be used where possible" iconURL="" id="relates_to" name="relates to" oppositeName="is related to" sortOrder="1"/>
+    <option iconURL="" id="depends_on" name="depends on" oppositeName="is depended on by" sortOrder="2"/>
+    <option iconURL="" id="duplicates" name="duplicates" oppositeName="is duplicated by" sortOrder="3"/>
+    <option iconURL="" id="parent" name="has parent" oppositeName="is parent of" parent="true" sortOrder="4"/>
+    <option iconURL="" id="follow_up" name="has follow-up" oppositeName="is follow-up of" sortOrder="5"/>
+    <option description="Used for traceability from Tasks to Requirements" iconURL="" id="implements" name="implements" oppositeName="is implemented by" sortOrder="6"/>
+<option id="refines" name="refines" oppositeName="is refined by" parent="true" sortOrder="7"/>
+    <option id="derived_from" name="is derived from" oppositeName="is derived by" sortOrder="8"/>
+</enumeration>
+

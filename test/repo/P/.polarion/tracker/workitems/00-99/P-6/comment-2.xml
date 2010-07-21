@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comment>
+    <field id="author">bob</field>
+    <field id="text" text-type="text/plain">...and my reply there.</field>
+    <field id="created">2010-06-02 11:46:23.393 +0100</field>
+	<field id="parentComment">P-6#1</field>
+</comment>

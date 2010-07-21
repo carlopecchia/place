@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<work-record>
+    <field id="timeSpent">2h</field>
+    <field id="comment"> bla bla bla</field>
+    <field id="date">2010-05-18</field>
+    <field id="type">analysis</field>
+    <field id="user">alice</field>
+</work-record>

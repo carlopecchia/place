@@ -1,0 +1,29 @@
+<% require "./lib/place" %>
+Gem::Specification.new do |s|
+  s.name              = "place"
+  s.version           = "<%= Place::VERSION %>"
+  s.summary           = "Polarion LACE: Polarion items access in Ruby"
+  s.description		  = <<-EOF
+    Extract information from Polarion and turns it into easy manageable ruby objects.
+	
+	Those objects are stored via Redis.
+  EOF
+  s.authors           = ["Carlo Pecchia"]
+  s.email             = ["info@carlopecchia.eu"]
+  s.homepage          = "http://github.com/carlopecchia/place"
+  s.add_dependency('json')
+  s.add_dependency('ohm')
+  s.add_dependency('nokogiri')
+  s.files = <%= Dir[
+    "Changelog",
+    "LICENSE",
+    "README.markdown",
+	"Technical.markdown",
+    "Rakefile",
+    "lib/**/*.rb",
+    "*.gemspec",
+    "test/*.*",
+	"examples/*.*",
+  ].inspect %>
+end
+

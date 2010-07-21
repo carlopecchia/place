@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<user>
+    <field id="email">alice@example.com</field>
+    <field id="watches">
+        <list>
+            <item>P$P-1</item>
+            <item>P$P-2</item>
+            <item>AB$AB-1</item>
+        </list>
+    </field>
+    <field id="description" text-type="text/plain"><![CDATA[bla bla bla
+]]></field>
+    <field id="name">Alice White</field>
+</user>

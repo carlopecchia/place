@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<work-item>
+    <field id="type">task</field>
+    <field id="author">alice</field>
+    <field id="assignee">
+	<list>
+		<item>alice</item>
+		<item>bob</item>
+	</list>
+    </field>
+    <field id="timeSpent">2h</field>
+    <field id="title">task P-3</field>
+    <field id="created">2010-02-04 15:42:25.854 +0100</field>
+    <field id="priority">15.0</field>
+    <field id="description" text-type="text/html"><![CDATA[
+            <p>lorem ipsum...</p>
+        ]]></field>
+    <field id="status">open</field>
+    <field id="severity">trivial</field>
+    <field id="context" type="string">ProjectManagement</field>
+	<field id="linkedWorkItems">
+        <list>
+            <struct>
+                <item id="revision"/>
+                <item id="workItem">P-1</item>
+                <item id="role">parent</item>
+                <item id="suspect">false</item>
+            </struct>
+        </list>
+    </field>
+</work-item>

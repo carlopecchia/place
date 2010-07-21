@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<time-point>
+    <field id="time">2010-12-31</field>
+    <field id="description" text-type="text/plain">Scadenza del veglione</field>
+    <field id="name">Secondo Timepoint</field>
+</time-point>

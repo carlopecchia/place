@@ -1,0 +1,11 @@
+2010-07-16 - Added memoization for total_on computing in WorkItem
+2010-07-14 - Added update* methods to Place: knowing where a repo is/was updated
+2010-06-25 - Tests refactored
+2010-06-25 - Added logging facility in collecting and retrieve
+2010-06-23 - Repository gathering reviewed, tests tuned.. and finally less code
+2010-06-21 - Added link workitems <-> projects
+2010-06-17 - Added links, watches and roles with testing
+2010-06-15 - Added comments with tests
+2010-06-15 - Added work record wirh testing
+2010-06-14 - Advanced on work_item testing
+2010-06-14 - Added users

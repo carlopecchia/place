@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <field id="description" text-type="text/plain">Testing project P</field>
+    <field id="name">P</field>
+    <field id="trackerPrefix">P</field>
+    <field id="lead">alice</field>
+    <field id="active">true</field>
+</project>

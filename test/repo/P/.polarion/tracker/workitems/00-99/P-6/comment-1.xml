@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comment>
+    <field id="author">alice</field>
+    <field id="text" text-type="text/plain">First comment here...</field>
+    <field id="title">Note</field>
+    <field id="created">2010-06-01 11:46:23.393 +0100</field>
+</comment>

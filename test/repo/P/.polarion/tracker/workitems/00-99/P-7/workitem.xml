@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<work-item>
+    <field id="type">task</field>
+    <field id="author">alice</field>
+    <field id="title">task P-1</field>
+    <field id="created">2010-02-04 15:42:25.854 +0100</field>
+    <field id="priority">25.0</field>
+    <field id="description" text-type="text/html"><![CDATA[
+            <p>lorem ipsum...</p>
+        ]]></field>
+    <field id="status">closed</field>
+</work-item>

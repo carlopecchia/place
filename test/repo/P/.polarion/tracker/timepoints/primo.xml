@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<time-point>
+    <field id="time">2010-07-01</field>
+    <field id="description" text-type="text/plain">Scadenza del 1 Luglio</field>
+    <field id="name">Primo Timepoint</field>
+</time-point>
