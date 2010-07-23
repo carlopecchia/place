@@ -4,37 +4,70 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
 	<title>carlopecchia/place @ GitHub</title>
 	
 	<style type="text/css">
-		body {
-  		margin-top: 1.0em;
-  		background-color: #f0f0ef;
-		  font-family: "Helvetica,Arial,FreeSans";
-  		color: #000000;
+	body {
+  	  margin-top: 1.0em;
+  	  /* background-color: #f0f0f0; */
+	  background-color: #fff;
+	  font-family: Helvetica, Arial, FreeSans, sans-serif;
+  	  color: #333;
     }
     #container {
       margin: 0 auto;
       width: 700px;
+	  padding: 1em;
     }
-		h1 { font-size: 3.8em; color: #0f0f10; margin-bottom: 3px; }
-		h1 .small { font-size: 0.4em; }
-		h1 a { text-decoration: none }
-		h2 { font-size: 1.5em; color: #0f0f10; }
+	
+	h1 { font-size: 3.5em; color: #0f0f10; margin-bottom: 3px; }
+	h1 .small { font-size: 0.4em; }
+	h1 a { text-decoration: none }
+	h2 { font-size: 1.5em; color: #0f0f10; margin-top: 2em; }
     h3 { text-align: center; color: #0f0f10; }
     a { color: #0f0f10; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
     .download { float: right; }
-		pre { background: #000; color: #fff; padding: 15px;}
+	pre { background: #ddd; color: #666; padding: 15px;}
     hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
     .footer { text-align:center; padding-top:30px; font-style: italic; }
+	
+    .description {
+	  font-size: 1.2em;
+	  margin: 30px;
+	  font-style: italic;
+	  background-color: #efe;
+	  padding: 0.5em;
+	}
+	
+	.sections {
+	  width: 660px;
+	  margin: 50px auto 0 auto;
+	}
+	
+	a.section {
+	  width: 180px;
+	  float: left;
+	  margin-right: 20px;
+	  padding: 5px;
+	  text-align: center;
+	  background-color: #dfd;
+	  text-decoration: none;
+	  font-size: 150%;
+	  font-weight: bold;
+	  color: #555;
+	}
+	a.section:hover {
+	  background-color: #aaa;
+	  color: #333;
+	}
 	</style>
 	
 </head>
 
 <body>
-  <a href="http://github.com/carlopecchia/place"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+  <a href="http://github.com/carlopecchia/place">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" />
+  </a>
 
   <div id="container">
 
@@ -45,27 +78,63 @@
         <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
     </div>
 
-    <h1><a href="http://github.com/carlopecchia/place">Place</a>
-      <span class="small">(by <a href="http://github.com/carlopecchia">carlopecchia</a>)</span></h1>
+    <h1><a href="http://github.com/carlopecchia/place">Place</a></h1>
 
     <div class="description">
-      Extract information from PolarionALM&trade; turning it into easy manageable ruby objects.
+      Extract information from <a href="http://www.polarion.com">PolarionALM&trade;</a> turning it into easy manageable Ruby objects.
     </div>
 
-    <p>Place (<em>P</em>olarion <em>Lace</em>) collects informations from Polarion ALM ™ and turns it into easy manageable ruby objects, which are managed by excellent key-value store Redis, via the Ruby library Ohm.</p><h2>Dependencies</h2>
-<p>Nokogiri, Ohm, Redis, Json</p>
-<h2>Install</h2>
-<p>
-<pre>
-  $ sudo gem install place
-</pre>
-</p>
-<h2>License</h2>
-<p>Apache License</p>
-<h2>Authors</h2>
-<p>Carlo Pecchia (info@carlopecchia.eu)
-<br/>      </p>
+    <p>Place (<em>P</em>olarion <em>Lace</em>) collects informations from Polarion ALM ™ and turns it into easy manageable ruby objects, which are persisted by <a href="http://code.google.com/p/redis/">Redis</a> key-value store.</p>
+	
 
+	<p>
+	"Information" includes: users, projects, work items, links, watches, comments, ...
+	</p>
+
+	<div class="sections">
+	  <a class="section" href="http://github.com/carlopecchia/place" title="Get source on GitHub">source code</a>
+
+  	  <a class="section" href="http://rubygems.org/gems/place" title="Get the Gem">gem</a>
+
+	  <a class="section" href="http://rdoc.info/projects/carlopecchia/place" title="Access Ruby RDoc documentation">rdoc</a>
+	</div>	
+	<div style="clear: both"> </div>
+	
+    <h2>Install</h2>
+    <pre>  $ sudo gem install place</pre>
+	
+	<h2>Example</h2>
+	Obtain a local working copy:
+	<pre>  $ svn co http://your.polarion.server/repo local_repo</pre>
+	
+	Access stuff with Ruby:
+	<pre>  require 'place'
+  include Place
+
+  Place.setup('./local_repo')
+  Place.logger_setup('log.txt')
+
+  Place.gather!
+  
+  puts "Users: #{User.all.size}"
+  puts "Workitems: #{WorkItem.all.size}"
+
+  all_tasks = WorkItem.find_by_type(:task)
+
+  demo = Project.find_by_name('Demo')
+  demo_tasks = demo.workitems(:type => :taks)
+
+  t = demo_tasks.last
+  puts "Assignees for #{t.wid}: #{t.assignees.map{|u| u.name}.join(' ')}"</pre>
+	
+	<h2>Dependencies</h2>
+    <p>nokogiri, ohm, json</p>
+	
+    <h2>License</h2>
+    <p>Place is released under the termo of Apache License.</p>
+	
+    <h2>Authors</h2>
+    <p>Carlo Pecchia (info [at] carlopecchia.eu)</p>
 
     <h2>Download</h2>
     <p>
