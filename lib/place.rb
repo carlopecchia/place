@@ -17,7 +17,7 @@ require File.join(File.dirname(__FILE__), 'place', 'participation')
 
 
 module Place
-  VERSION = '0.1.0'
+  VERSION = '0.1.1'
 
   @conf = {}
   
@@ -89,24 +89,38 @@ module Place
   # from duration to number of hours (1d == 8h)
   def to_hours(duration)
     return nil if duration.nil?
-	# TODO with a case statement or another regexp?
-    if duration =~ /(\d+)d\s(\d+)h/
-      days, hours = $1.to_f, $2.to_f
-	elsif duration =~ /(\d+)\/(\d+)d/
-	  days = $1.to_f / $2.to_f
-	  hours = 0
-	elsif duration =~ /(\d+)\/(\d+)h/
-	  days = 0
-	  hours = $1.to_f / $2.to_f
-    elsif duration =~ /(\d+)d/
-	  days, hours = $1.to_f, 0
-    elsif duration =~ /(\d+)h/
-	  days, hours =  0, $1.to_f
+
+    case duration
+      when /([\d\/\s]*)d\s*([\d\/\s]*)h/
+	    days  = normalize($1)
+	    hours = normalize($2)
+	  when /([\d\/\s]*)d/
+	    days  = normalize($1)
+	    hours = 0.0
+	  when /([\d\/\s]*)h/
+  	    days  = 0.0
+	    hours = normalize($1)
     else
-	  days, hours =  0, 0
+      days  = 0
+      hours = 0
     end
-
-    (8*days + hours)
+	
+	  8*days.to_f + hours.to_f
   end
-
+ 
+ private
+ 
+  def normalize(e)
+    case e
+	  when /(\d+)\s+(\d+)\/(\d+)/
+	    # 1 1/2 -> 1.5
+	    $1.to_f + $2.to_f / $3.to_f
+	  when /(\d+)\/(\d+)/
+  	  # 1/2 -> 0.5
+	    $1.to_f / $2.to_f
+    when /(\d+)/
+      # 3 -> 3
+	    $1.to_f
+    end 
+  end
 end
