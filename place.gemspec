@@ -1,15 +1,15 @@
 
 Gem::Specification.new do |s|
   s.name              = "place"
-  s.version           = "0.1.0"
-  s.summary           = "Polarion LACE: Polarion items access in Ruby"
+  s.version           = "0.1.1"
+  s.summary           = "Polarion Lace: Polarion items access in Ruby"
   s.description		  = <<-EOF
     Extract information from Polarion and turns it into easy manageable ruby objects.
 	
 	Those objects are stored via Redis.
   EOF
   s.authors           = ["Carlo Pecchia"]
-  s.email             = ["info@carlopecchia.eu"]
+  s.email             = ["c.pecchia@gmail.com"]
   s.homepage          = "http://github.com/carlopecchia/place"
   s.add_dependency('json')
   s.add_dependency('ohm')

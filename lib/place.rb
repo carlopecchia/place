@@ -5,7 +5,6 @@ require 'nokogiri'
 require 'json'
 require 'logger'
 
-
 require File.join(File.dirname(__FILE__), 'place', 'project')
 require File.join(File.dirname(__FILE__), 'place', 'time_point')
 require File.join(File.dirname(__FILE__), 'place', 'user')
