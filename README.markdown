@@ -1,5 +1,9 @@
 Place is a Ruby library aimed to gather and manage objects from [Polarion ALM](http://www.polarion.com/)&trade; repositories. Its name comes from the contraction of "**P**olarion **lace**".
 
+# Installation
+
+  $ gem install place
+
 
 # Intro
 
