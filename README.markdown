@@ -28,10 +28,9 @@ Retrieving data from a repository working copy takes not too much time. Assuming
 
 ## Roadmap
 
-* add more examples into documentation
-* add hyperlinks for workitems (and votes, approvals, ...)
+* add votes for workitems (and approvals, ...)
 * (maybe) incremental update rather than one-shot gathering
-* implement write back to repository
+* implement write back to repository (?)
 * callback for each workitem type (es: complex calculated fields)
 
 	
